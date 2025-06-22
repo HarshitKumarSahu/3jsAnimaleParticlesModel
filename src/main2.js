@@ -1,7 +1,22 @@
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import gsap from "gsap";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 import Model from './model';
+
+import Lenis from '@studio-freight/lenis';
+const lenis = new Lenis({
+    // duration: 2
+});
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /*------------------------------
 Renderer
@@ -12,7 +27,6 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-
 
 /*------------------------------
 Scene & Camera
@@ -27,31 +41,11 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 5;
 camera.position.y = 1;
 
-
-/*------------------------------
-Mesh
-------------------------------*/
-const geometry = new THREE.BoxGeometry(2, 2, 2);
-const material = new THREE.MeshBasicMaterial({
-    color: 0x00ff00,
-});
-const cube = new THREE.Mesh(geometry, material);
-// scene.add( cube );
-
-
 /*------------------------------
 OrbitControls
 ------------------------------*/
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enabled = false
-
-/*------------------------------
-Helpers
-------------------------------*/
-// const gridHelper = new THREE.GridHelper(10, 10);
-// scene.add(gridHelper);
-// const axesHelper = new THREE.AxesHelper(5);
-// scene.add(axesHelper);
+controls.enabled = false;
 
 /*------------------------------
 Models
@@ -63,8 +57,8 @@ const horse = new Model({
     color1: "red",
     color2: "yellow",
     background: "#47001b",
-    playOnLoad: true,
-})
+    playOnLoad: true, // Start with horse visible
+});
 const hand = new Model({
     name: "hand",
     file: "/model/hand.glb",
@@ -72,7 +66,7 @@ const hand = new Model({
     color1: "blue",
     color2: "pink",
     background: "#110047",
-})
+});
 const horse2 = new Model({
     name: "horse2",
     file: "/model/horse.glb",
@@ -80,33 +74,54 @@ const horse2 = new Model({
     color1: "red",
     color2: "pink",
     background: "#470047",
-})
+});
 
 /*------------------------------
-Controllers
+Scroll-Based Model Switching
 ------------------------------*/
-const buttons = document.querySelectorAll(".button")
-buttons[0].addEventListener("click", () => {
-    horse.add()
-    hand.remove()
-    horse2.remove()
-})
-buttons[1].addEventListener("click", () => {
-    horse.remove()
-    hand.add()
-    horse2.remove()
-})
-buttons[2].addEventListener("click", () => {
-    horse.remove()
-    hand.remove()
-    horse2.add()
-})
 
+function handleScroll() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollFraction = scrollY / (documentHeight - windowHeight); // 0 to 1
+    const sectionIndex = Math.min(
+        Math.floor(scrollFraction * 3), // Divide scroll into 3 sections
+        2
+    );
+
+    // Switch models based on section
+    if (sectionIndex === 0 && !horse.isActive) {
+        horse.add();
+        hand.remove();
+        horse2.remove();
+    } else if (sectionIndex === 1 && !hand.isActive) {
+        horse.remove();
+        hand.add();
+        horse2.remove();
+    } else if (sectionIndex === 2 && !horse2.isActive) {
+        horse.remove();
+        hand.remove();
+        horse2.add();
+    }
+}
+
+// window.addEventListener('scroll', handleScroll);
+let isScrolling = false;
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(() => {
+            handleScroll();
+            isScrolling = false;
+        });
+    }
+});
 
 /*------------------------------
 Clock time
 ------------------------------*/
-const clock = new THREE.Clock()
+const clock = new THREE.Clock();
 
 /*------------------------------
 Loop
@@ -116,17 +131,16 @@ const animate = function() {
     renderer.render(scene, camera);
 
     if (horse.isActive) {
-        horse.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+        horse.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime();
     }
     if (hand.isActive) {
-        hand.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+        hand.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime();
     }
     if (horse2.isActive) {
-        horse.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+        horse2.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime();
     }
 };
 animate();
-
 
 /*------------------------------
 Resize
@@ -139,16 +153,15 @@ function onWindowResize() {
 window.addEventListener('resize', onWindowResize, false);
 
 /*------------------------------
-mouse move
+Mouse Move
 ------------------------------*/
 function onMouseMove(e) {
-    const x = e.clientX
-    const y = e.clientY
+    const x = e.clientX;
+    const y = e.clientY;
 
     gsap.to(scene.rotation, {
         y: gsap.utils.mapRange(0, window.innerWidth, 0.5, -0.5, x),
-        x: gsap.utils.mapRange(0, window.innerWidth, 0.2, -0.2, y)
-    })
+        x: gsap.utils.mapRange(0, window.innerHeight, 0.2, -0.2, y) // Adjusted to use innerHeight for y-axis
+    });
 }
-window.addEventListener("mousemove", onMouseMove)
-
+window.addEventListener("mousemove", onMouseMove);
