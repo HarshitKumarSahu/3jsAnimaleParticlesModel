@@ -42,7 +42,7 @@ body {
   
   canvas {
     position: fixed;
-    z-index: -1;
+    z-index: 99 !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -55,8 +55,34 @@ body {
   }
   
   .section {
-    height: 100vh; /* Each section takes up the full viewport height */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+h1 {
+    font-size: 25vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #f8f8f81f;
+    mix-blend-mode: difference;
+    line-height: 50%;
+    /* -webkit-text-stroke:#ff0000; */
+    /* -webkit-text-fill-color: #f8f8f81f;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: transparent; */
+}
+#heading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1 !important;
+}
 
   /* #section-horse { background: rgba(71, 0, 27, 0.1); }
 #section-hand { background: rgba(17, 0, 71, 0.1); }

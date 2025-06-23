@@ -5,8 +5,8 @@ import { MeshSurfaceSampler } from 'three/addons/math/MeshSurfaceSampler.js';
 
 import gsap from 'gsap';
 
-import vertex from "./shaders/vertex.glsl"
-import fragment from "./shaders/fragment.glsl"
+import vertex from "../shaders/vertex.glsl"
+import fragment from "../shaders/fragment.glsl"
 
 class Model {
     constructor(obj) {
