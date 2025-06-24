@@ -84,7 +84,7 @@ const horse2 = new Model({
 })
 const hand2 = new Model({
     name: "hand2",
-    file: "/model/hand.glb",
+    file: "/model/dog.glb",
     scene: scene,
     color1: "pink",
     color2: "yellow",
