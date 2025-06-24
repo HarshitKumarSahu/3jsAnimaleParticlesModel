@@ -131,10 +131,11 @@ class Model {
                 // delay: 0.3,
                 ease: "power3.out"
             })
-            gsap.to("body", {
-                background: this.background,
-                duration: 0.8
-            })
+            // in orignal model.js its un commented
+            // gsap.to("body", {
+            //     background: this.background,
+            //     duration: 0.8
+            // })
         }
         this.isActive = true
     }

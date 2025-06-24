@@ -45,7 +45,7 @@ canvas {
 
 
 
-
+/* 
 
 
 
@@ -81,25 +81,234 @@ h1 {
     font-size: 25vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #f8f8f81f;
-    mix-blend-mode: difference;
     line-height: 10%;
     text-transform: uppercase;
-    /* -webkit-text-stroke:#ff0000; */
-    /* -webkit-text-fill-color: #f8f8f81f;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: transparent; */
-}
-#heading {
+} */
+/* #heading {
     position: fixed;
     top: 0;
     left: 0;
+    transform: translate(0%, 50%);
     width: 100%;
-    height: 100vh;
+    height: 25vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     z-index: -1 !important;
-}
+    border-top: 1px solid salmon;
+    border-bottom: 1px solid salmon;
+    overflow: hidden;
+
+} */
   /* #section-horse { background: rgba(71, 0, 27, 0.1); }
 #section-hand { background: rgba(17, 0, 71, 0.1); }
 #section-horse2 { background: rgba(71, 0, 71, 0.1); } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Font Face: Roboto (Google Fonts) */
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap') format('woff2');
+    font-weight: 400, 700;
+    font-style: normal;
+    font-display: swap;
+}
+/* custom */
+@font-face {
+    font-family: custom-font-name;
+    src: url("url from the folder or link");
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    font-family: 'Roboto', system-ui, sans-serif;
+    /* font-family: gilroy; */
+    
+    /* smoothing the font */
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale; */
+    /* smooth scroll */
+    /* scroll-behavior: smooth; */
+}
+
+
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden !important;
+}
+#circle {
+    position: absolute;
+    top: 50%;
+    left: -95vh;
+    transform: translate(0%, -50%) rotate(60deg);
+    width: 190vh;
+    height: 190vh;
+    border-radius: 50%;
+    /* background-color: aqua; */
+    border: 2px solid #f8f8f8;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.stripe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    width: 100%;
+    height: 60px;
+    /* background-color: blue; */
+    transform-origin: 0% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.str1 {
+    transform: translate(0%, -50%) rotate(-20deg);
+}
+.str2 {
+    transform: translate(0%, -50%) rotate(-10deg);
+}
+.str3 {
+    transform: translate(0%, -50%) rotate(0deg);
+}
+.str4 {
+    transform: translate(0%, -50%) rotate(10deg);
+}
+.str5 {
+    transform: translate(0%, -50%) rotate(20deg);
+}
+.first {
+    width: 50%;
+    height: 100%;
+    /* background-color: blueviolet; */
+}
+.second {
+    padding-left: 2rem;
+    width: 50%;
+    height: 100%;
+    /* background-color: rgba(50, 0, 96, 0.361); */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: #222;
+    opacity: 0.5;
+}
+.second h4 {
+    font-size: 2rem;
+}
+.second h6 {
+    font-size: 1rem;
+    opacity: 0.5;
+}
+#goola {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+}
+
+canvas {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: -25%;
+    
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+  
+#controllers {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+.button {
+    border: none;
+    background: white;
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    margin: 5px;
+    font-family: sans-serif;
+    z-index: 99;
+} 
+  
+
+
+#panel {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 30px;
+    height: 25%;
+    /* background-color: thistle; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.btn {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color:black;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.1;
+}
