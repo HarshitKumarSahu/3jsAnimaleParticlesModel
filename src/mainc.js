@@ -92,7 +92,7 @@ const hand2 = new Model({
 })
 const horse3 = new Model({
     name: "horse2",
-    file: "/model/horse.glb",
+    file: "/model/giraffe.glb",
     scene: scene,
     color1: "red",
     color2: "blue",
