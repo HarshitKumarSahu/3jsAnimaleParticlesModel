@@ -89,6 +89,7 @@ const horse2 = new Model({
     background: "#470047",
 });
 
+
 /*------------------------------
 Scroll-Based Model Switching
 ------------------------------*/
