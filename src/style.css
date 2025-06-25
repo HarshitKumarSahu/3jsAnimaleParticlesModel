@@ -139,16 +139,17 @@ h1 {
 
 /* Font Face: Roboto (Google Fonts) */
 @font-face {
-    font-family: 'Roboto';
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap') format('woff2');
-    font-weight: 400, 700;
+    font-family: 'gar';
+    src: url('../public/fonts/futura/Futura\ Light\ Italic\ font.ttf');
+    /* font-weight: 400, 700;
     font-style: normal;
-    font-display: swap;
+    font-display: swap; */
 }
 /* custom */
 @font-face {
-    font-family: custom-font-name;
-    src: url("url from the folder or link");
+    font-family: 'fut';
+    src: url('../public/fonts/futura/Futura\ Book\ font.ttf');
+    /* src: url('../public/fonts/futura/Futura\ Heavy\ font.ttf'); */
 }
 
 /* Reset */
@@ -240,10 +241,12 @@ html, body {
 }
 .second h4 {
     font-size: 2rem;
+    font-family: fut;
 }
 .second h6 {
     font-size: 1rem;
     opacity: 0.5;
+    font-family: gar;
 }
 #goola {
     position: absolute;

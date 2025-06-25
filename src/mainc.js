@@ -73,25 +73,25 @@ const hand = new Model({
     color2: "pink",
     background: "#110047",
 })
-const horse2 = new Model({
-    name: "horse2",
-    file: "/model/dear1.glb",
+const deer = new Model({
+    name: "deer",
+    file: "/model/deer.glb",
     scene: scene,
     color1: "red",
     color2: "pink",
     background: "#470047",
     playOnLoad: true,
 })
-const hand2 = new Model({
-    name: "hand2",
+const dog = new Model({
+    name: "dog",
     file: "/model/dog.glb",
     scene: scene,
     color1: "pink",
     color2: "yellow",
     background: "#110047",
 })
-const horse3 = new Model({
-    name: "horse2",
+const giraffe = new Model({
+    name: "giraffe",
     file: "/model/giraffe.glb",
     scene: scene,
     color1: "red",
@@ -108,37 +108,37 @@ const buttons = document.querySelectorAll(".btn")
 buttons[0].addEventListener("click", () => {
     horse.add()
     hand.remove()
-    horse2.remove()
-    hand2.remove()
-    horse3.remove()
+    deer.remove()
+    dog.remove()
+    giraffe.remove()
 })
 buttons[1].addEventListener("click", () => {
     horse.remove()
     hand.add()
-    horse2.remove()
-    hand2.remove()
-    horse3.remove()
+    deer.remove()
+    dog.remove()
+    giraffe.remove()
 })
 buttons[2].addEventListener("click", () => {
     horse.remove()
     hand.remove()
-    horse2.add()
-    hand2.remove()
-    horse3.remove()
+    deer.add()
+    dog.remove()
+    giraffe.remove()
 })
 buttons[3].addEventListener("click", () => {
     horse.remove()
     hand.remove()
-    horse2.remove()    
-    hand2.add()
-    horse3.remove()
+    deer.remove()
+    dog.add()
+    giraffe.remove()
 })
 buttons[4].addEventListener("click", () => {
     horse.remove()
     hand.remove()
-    horse2.remove()    
-    hand2.remove()
-    horse3.add()
+    deer.remove()
+    dog.remove()
+    giraffe.add()
 })
 
 const buttons2 = document.querySelectorAll(".button")
@@ -196,14 +196,14 @@ const animate = function() {
     if (hand.isActive) {
         hand.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
     }
-    if (horse2.isActive) {
-        horse2.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+    if (deer.isActive) {
+        deer.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
     }
-    if (hand2.isActive) {
-        hand2.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+    if (dog.isActive) {
+        dog.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
     }
-    if (horse3.isActive) {
-        horse3.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
+    if (giraffe.isActive) {
+        giraffe.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime()
     }
 };
 animate();
