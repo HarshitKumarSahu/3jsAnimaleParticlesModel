@@ -45,5 +45,3 @@ Animale is a playful, interactive web project that showcases a carousel of whims
 
 4. **Open in your browser:**
    Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
-
-### Build for Production
