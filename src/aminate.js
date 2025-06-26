@@ -4,12 +4,22 @@ let  active = 3;
 
 let btns = document.querySelectorAll(".btn")
 let seconds = document.querySelectorAll(".second")
+let goolas = document.querySelectorAll("#goola")
+let h6s = document.querySelectorAll("h6")
+
+greyOut()
 
 gsap.to(btns[active-1], {
-    opacity: 0.7
+    opacity: 1
 })
 gsap.to(seconds[active-1], {
     opacity: 1
+})
+gsap.to(goolas[active-1], {
+    backgroundColor: "#F8F8F8",
+})
+gsap.to(h6s[active-1], {
+    opacity: 0.68
 })
 
 btns.forEach((btns, idx) => {
@@ -26,15 +36,28 @@ btns.forEach((btns, idx) => {
         gsap.to(seconds[idx], {
             opacity: 1
         })
+        gsap.to(goolas[idx], {
+            backgroundColor: "#F8F8F8",
+            duration: 1,
+        })
+        gsap.to(h6s[idx], {
+            opacity: 0.68
+        })
     })
 })
 
 function greyOut() {
     gsap.to(btns, {
-        opacity: 0.08
+        opacity: 0.1
     })
     gsap.to(seconds, {
-        opacity: 0.5
+        opacity: 0.34
+    })
+    gsap.to(goolas, {
+        backgroundColor: "#555"
+    })
+    gsap.to(h6s, {
+        opacity: 0.34
     })
 }
 

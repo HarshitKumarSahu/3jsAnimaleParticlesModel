@@ -100,7 +100,7 @@ class Model {
             this.particlesGeometry.setAttribute("position", new THREE.BufferAttribute(particlesPositions, 3))
             this.particlesGeometry.setAttribute("aRandom", new THREE.BufferAttribute(particlesRandomness, 3))
 
-            console.log(this.particlesGeometry)
+            // console.log(this.particlesGeometry)
 
             //particles
             this.particles = new THREE.Points(this.particlesGeometry, this.particlesMaterial)
@@ -131,7 +131,7 @@ class Model {
                 // delay: 0.3,
                 ease: "power3.out"
             })
-            // in orignal model.js its un commented
+            //in orignal model.js its un commented
             // gsap.to("body", {
             //     background: this.background,
             //     duration: 0.8
