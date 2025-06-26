@@ -12,6 +12,8 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
+// alert(devicePixelRatio)
 
 
 /*------------------------------
@@ -31,11 +33,11 @@ camera.position.y = 1;
 /*------------------------------
 Mesh
 ------------------------------*/
-const geometry = new THREE.BoxGeometry(2, 2, 2);
-const material = new THREE.MeshBasicMaterial({
-    color: 0x00ff00,
-});
-const cube = new THREE.Mesh(geometry, material);
+// const geometry = new THREE.BoxGeometry(2, 2, 2);
+// const material = new THREE.MeshBasicMaterial({
+//     color: 0x00ff00,
+// });
+// const cube = new THREE.Mesh(geometry, material);
 // scene.add( cube );
 
 
@@ -171,42 +173,42 @@ buttons[4].addEventListener("click", () => {
     giraffe.add()
 })
 
-// const buttons2 = document.querySelectorAll(".button")
-// buttons2[0].addEventListener("click", () => {
-//     horse.add()
-//     hand.remove()
-//     horse2.remove()
-//     hand2.remove()
-//     horse3.remove()
-// })
-// buttons2[1].addEventListener("click", () => {
-//     horse.remove()
-//     hand.add()
-//     horse2.remove()
-//     hand2.remove()
-//     horse3.remove()
-// })
-// buttons2[2].addEventListener("click", () => {
-//     horse.remove()
-//     hand.remove()
-//     horse2.add()
-//     hand2.remove()
-//     horse3.remove()
-// })
-// buttons2[3].addEventListener("click", () => {
-//     horse.remove()
-//     hand.remove()
-//     horse2.remove()    
-//     hand2.add()
-//     horse3.remove()
-// })
-// buttons2[4].addEventListener("click", () => {
-//     horse.remove()
-//     hand.remove()
-//     horse2.remove()    
-//     hand2.remove()
-//     horse3.add()
-// })
+const buttons2 = document.querySelectorAll(".button")
+buttons2[0].addEventListener("click", () => {
+    horse.add()
+    panda.remove()
+    deer.remove()
+    dog.remove()
+    giraffe.remove()
+})
+buttons2[1].addEventListener("click", () => {
+    horse.remove()
+    panda.add()
+    deer.remove()
+    dog.remove()
+    giraffe.remove()
+})
+buttons2[2].addEventListener("click", () => {
+    horse.remove()
+    panda.remove()
+    deer.add()
+    dog.remove()
+    giraffe.remove()
+})
+buttons2[3].addEventListener("click", () => {
+    horse.remove()
+    panda.remove()
+    deer.remove()
+    dog.add()
+    giraffe.remove()
+})
+buttons2[4].addEventListener("click", () => {
+    horse.remove()
+    panda.remove()
+    deer.remove()
+    dog.remove()
+    giraffe.add()
+})
 
 /*------------------------------
 Clock time
@@ -246,6 +248,8 @@ function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.setPixelRatio(4)
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
 }
 window.addEventListener('resize', onWindowResize, false);
 

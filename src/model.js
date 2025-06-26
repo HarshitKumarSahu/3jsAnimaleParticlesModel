@@ -76,7 +76,7 @@ class Model {
 
             //geometry particles
             const sampler = new MeshSurfaceSampler(this.mesh).build();
-            const numParticles = 20000
+            const numParticles = 30000
             this.particlesGeometry = new THREE.BufferGeometry()
             const particlesPositions = new Float32Array(numParticles * 3)
             const particlesRandomness = new Float32Array(numParticles * 3)
