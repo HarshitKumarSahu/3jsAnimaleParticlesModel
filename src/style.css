@@ -1,7 +1,7 @@
 /* Font Face: Roboto (Google Fonts) */
 @font-face {
     font-family: 'gar';
-    src: url('../public/fonts/futura/Futura\ Light\ Italic\ font.ttf');
+    src: url('../public/fonts/FuturaLightItalic.ttf');
     /* font-weight: 400, 700;
     font-style: normal;
     font-display: swap; */
@@ -9,7 +9,7 @@
 /* custom */
 @font-face {
     font-family: 'fut';
-    src: url('../public/fonts/futura/Futura\ Book\ font.ttf');
+    src: url('../public/fonts/FuturaBook.ttf');
     /* src: url('../public/fonts/futura/Futura\ Heavy\ font.ttf'); */
 }
 

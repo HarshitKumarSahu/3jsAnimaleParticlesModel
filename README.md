@@ -1,6 +1,6 @@
 # Animale
 
-Animale is a playful, interactive web project that showcases a carousel of whimsical animal-themed personas, each with their own unique style and personality. Built with HTML, CSS, and JavaScript, the project features a visually engaging interface and smooth transitions between different animal "stripes."
+Animale is a playful, interactive web project that showcases a carousel of whimsical animal-themed personas, each with their own unique style and personality. Built with HTML, CSS, JavaScript, GSAP, Three.js and Shaders, the project features a visually engaging interface and smooth transitions between different animal "stripes."
 
 ## Features
 
