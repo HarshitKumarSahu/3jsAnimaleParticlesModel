@@ -12,7 +12,7 @@ Animale is a playful, interactive web project that showcases a carousel of whims
 
 ## Demo
 
-![Animale Screenshot](./screenshot.png)
+![Animale Screenshot](./public/screenshot.png)
 
 ## Getting Started
 
