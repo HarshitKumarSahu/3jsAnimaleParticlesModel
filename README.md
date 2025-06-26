@@ -25,7 +25,7 @@ Animale is a playful, interactive web project that showcases a carousel of whims
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/animale.git
+   git clone https://github.com/HarshitKumarSahu/3jsAnimaleParticlesModel.git
    cd animale
    ```
 

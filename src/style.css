@@ -1,16 +1,10 @@
-/* Font Face: Roboto (Google Fonts) */
 @font-face {
     font-family: 'gar';
     src: url('../public/fonts/FuturaLightItalic.ttf');
-    /* font-weight: 400, 700;
-    font-style: normal;
-    font-display: swap; */
 }
-/* custom */
 @font-face {
     font-family: 'fut';
     src: url('../public/fonts/FuturaBook.ttf');
-    /* src: url('../public/fonts/futura/Futura\ Heavy\ font.ttf'); */
 }
 
 /* Reset */
@@ -23,18 +17,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #0f0f0f;
-    /* font-family: 'Roboto', system-ui, sans-serif; */
-    /* font-family: gilroy; */
-    
-    /* smoothing the font */
-    /* -webkit-font-smoothing: antialiased; */
-    /* -moz-osx-font-smoothing: grayscale; */
-    /* smooth scroll */
-    /* scroll-behavior: smooth; */
 }
-
-
-
 .main {
     width: 100%;
     height: 100vh;
@@ -49,11 +32,7 @@ html, body {
     width: 190vh;
     height: 190vh;
     border-radius: 50%;
-    /* background-color: aqua; */
     border: 0.08rem solid #555;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 .stripe {
     position: absolute;
@@ -62,7 +41,6 @@ html, body {
     transform: translate(0%, -50%);
     width: 100%;
     height: 60px;
-    /* background-color: blue; */
     transform-origin: 0% 50%;
     display: flex;
     align-items: center;
@@ -86,19 +64,16 @@ html, body {
 .first {
     width: 50%;
     height: 100%;
-    /* background-color: blueviolet; */
 }
 .second {
     padding-left: 2rem;
     width: 50%;
     height: 100%;
-    /* background-color: rgba(50, 0, 96, 0.361); */
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     color: #f8f8f8;
-    /* color: rgb(111, 111, 111); */
     opacity: 0.5;
 }
 .second h4 {
@@ -107,7 +82,6 @@ html, body {
 }
 .second h6 {
     font-size: 0.85rem;
-    /* opacity: 0.6; */
     font-family: gar;
 }
 #goola {
@@ -115,8 +89,6 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* width: 0.75rem;
-    height: 0.75rem; */
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
@@ -131,7 +103,6 @@ canvas {
     left: -22.5%;
     width: 100%;
     height: 100%;
-    /* background-color: aquamarine; */
 }
   
 #controllers {
@@ -164,7 +135,6 @@ canvas {
     transform: translate(0,-50%);
     width: 30px;
     height: 25%;
-    /* background-color: thistle; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -178,9 +148,6 @@ canvas {
     cursor: pointer;
     opacity: 0.34;
 }
-
-/* Responsive Media Queries (Mobile-First) */
-/* Phone view: up to 576px */
 @media (max-width: 576px) {
     #panel {
         display: none;
@@ -195,8 +162,6 @@ canvas {
         display: none;
     }
 }
-
-/* Tablet view: 577px to 768px */
 @media (min-width: 577px) and (max-width: 1200px) {
     #panel {
         display: none;

@@ -29,31 +29,11 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 5;
 camera.position.y = 1;
 
-
-/*------------------------------
-Mesh
-------------------------------*/
-// const geometry = new THREE.BoxGeometry(2, 2, 2);
-// const material = new THREE.MeshBasicMaterial({
-//     color: 0x00ff00,
-// });
-// const cube = new THREE.Mesh(geometry, material);
-// scene.add( cube );
-
-
 /*------------------------------
 OrbitControls
 ------------------------------*/
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enabled = false
-
-/*------------------------------
-Helpers
-------------------------------*/
-// const gridHelper = new THREE.GridHelper(10, 10);
-// scene.add(gridHelper);
-// const axesHelper = new THREE.AxesHelper(5);
-// scene.add(axesHelper);
 
 /*------------------------------
 Models
@@ -65,7 +45,6 @@ const horse = new Model({
     color1: "fuchsia",
     color2: "aqua",
     background: "#47001b",
-    // playOnLoad: true,
 })
 const panda = new Model({
     name: "panda",
@@ -75,45 +54,15 @@ const panda = new Model({
     color2: "pink",
     background: "#110047",
 })
-// const deer = new Model({
-//     name: "deer",
-//     file: "/model/deer.glb",
-//     scene: scene,
-//     color1: "red",
-//     color2: "pink",
-//     background: "#470047",
-//     playOnLoad: true,
-// })
-// const dog = new Model({
-//     name: "dog",
-//     file: "/model/dog.glb",
-//     scene: scene,
-//     color1: "pink",
-//     color2: "yellow",
-//     background: "#110047",
-// })
-// const giraffe = new Model({
-//     name: "giraffe",
-//     file: "/model/giraffe.glb",
-//     scene: scene,
-//     color1: "red",
-//     color2: "blue",
-//     background: "#47001b",
-//     // playOnLoad: true,
-// })
-
 const deer = new Model({
     name: "deer",
     file: "/model/deer.glb",
     scene: scene,
-    // color1: "#fe7f2d",
-    // color2: "Blue",
     color1: "red",
     color2: "Yellow",
     background: "#004700",
     playOnLoad: true,
 })
-
 const dog = new Model({
     name: "dog",
     file: "/model/dog.glb",
@@ -122,7 +71,6 @@ const dog = new Model({
     color2: "red",
     background: "#470047",
 })
-
 const giraffe = new Model({
     name: "giraffe",
     file: "/model/giraffe.glb",
@@ -134,7 +82,7 @@ const giraffe = new Model({
 })
 
 /*------------------------------
-Controllers
+Controllers 1
 ------------------------------*/
 const buttons = document.querySelectorAll(".btn")
 buttons[0].addEventListener("click", () => {
@@ -173,6 +121,9 @@ buttons[4].addEventListener("click", () => {
     giraffe.add()
 })
 
+/*------------------------------
+Controllers 2
+------------------------------*/
 const buttons2 = document.querySelectorAll(".button")
 buttons2[0].addEventListener("click", () => {
     horse.add()
