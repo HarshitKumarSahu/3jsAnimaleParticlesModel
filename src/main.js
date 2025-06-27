@@ -125,12 +125,24 @@ buttons[4].addEventListener("click", () => {
 Controllers 2
 ------------------------------*/
 const buttons2 = document.querySelectorAll(".button")
+gsap.to(buttons2[2], {
+    backgroundColor: "transparent",
+    color: "white"
+})
 buttons2[0].addEventListener("click", () => {
     horse.add()
     panda.remove()
     deer.remove()
     dog.remove()
     giraffe.remove()
+    gsap.to(buttons2, {
+        backgroundColor: "white",
+        color: "black"
+    })
+    gsap.to(buttons2[0], {
+        backgroundColor: "transparent",
+        color: "white"
+    })
 })
 buttons2[1].addEventListener("click", () => {
     horse.remove()
@@ -138,6 +150,14 @@ buttons2[1].addEventListener("click", () => {
     deer.remove()
     dog.remove()
     giraffe.remove()
+    gsap.to(buttons2, {
+        backgroundColor: "white",
+        color: "black"
+    })
+    gsap.to(buttons2[1], {
+        backgroundColor: "transparent",
+        color: "white"
+    })
 })
 buttons2[2].addEventListener("click", () => {
     horse.remove()
@@ -145,6 +165,14 @@ buttons2[2].addEventListener("click", () => {
     deer.add()
     dog.remove()
     giraffe.remove()
+    gsap.to(buttons2, {
+        backgroundColor: "white",
+        color: "black"
+    })
+    gsap.to(buttons2[2], {
+        backgroundColor: "transparent",
+        color: "white"
+    })
 })
 buttons2[3].addEventListener("click", () => {
     horse.remove()
@@ -152,6 +180,14 @@ buttons2[3].addEventListener("click", () => {
     deer.remove()
     dog.add()
     giraffe.remove()
+    gsap.to(buttons2, {
+        backgroundColor: "white",
+        color: "black"
+    })
+    gsap.to(buttons2[3], {
+        backgroundColor: "transparent",
+        color: "white"
+    })
 })
 buttons2[4].addEventListener("click", () => {
     horse.remove()
@@ -159,6 +195,14 @@ buttons2[4].addEventListener("click", () => {
     deer.remove()
     dog.remove()
     giraffe.add()
+    gsap.to(buttons2, {
+        backgroundColor: "white",
+        color: "black"
+    })
+    gsap.to(buttons2[4], {
+        backgroundColor: "transparent",
+        color: "white"
+    })
 })
 
 /*------------------------------

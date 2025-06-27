@@ -126,6 +126,7 @@ canvas {
     margin: 5px;
     font-family: sans-serif;
     z-index: 99;
+    border: 1.5px solid white;
 } 
 
 #panel {
